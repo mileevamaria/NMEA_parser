@@ -16,7 +16,7 @@
 ```bash 
 git clone https://github.com/mileevamaria/test_globinform.git
 ```
-2. Установите и активируйте вирутальное окружение:
+2. Установите и активируйте виртуальное окружение:
 ```bash 
 python3 -m venv env
 source env/bin/activate
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```bash 
 python manage.py migrate
 ```
-7. Запустите сайт:
+5. Запустите сайт:
 ```bash 
 python manage.py runserver
 ```

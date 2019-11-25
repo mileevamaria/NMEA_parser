@@ -35,5 +35,5 @@ python manage.py runserver
 ```
 
 # Примеры
-![https://github.com/mileevamaria/test_globinform/blob/master/img/index.png]
-![https://github.com/mileevamaria/test_globinform/blob/master/img/file_content.png]
+![](https://github.com/mileevamaria/test_globinform/blob/master/img/index.png)
+![](https://github.com/mileevamaria/test_globinform/blob/master/img/file_content.png)

@@ -3,3 +3,5 @@ env/
 .idea/
 test.py
 media/
+__pycache__/
+gps_all

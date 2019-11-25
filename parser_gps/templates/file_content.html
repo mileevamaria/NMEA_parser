@@ -4,26 +4,82 @@
 
     <div class="row">
         <div class="col-12">
+            <h2>Данные из файла "{{ filename }}"</h2>
+            <hr />
+            <h4>Фильтр</h4>
+            <br/>
+        </div>
+    </div>
+    <form action="" method="GET">
+        <div class="row">
+            <div class="col-3">
+                <h6>Высота над уровнем моря:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="diff_height" id="exampleRadios1" value="more">
+                    <label class="form-check-label" for="exampleRadios1">больше</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="diff_height" id="exampleRadios2" value="less">
+                    <label class="form-check-label" for="exampleRadios2">меньше</label>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input class="form-control form-control-sm" type="text" name="height_query">
+                    <small id="floatHelp" class="form-text text-muted">Пример ввода числа: 200.5</small>
+                </div>
+                <br/>
+            </div>
+            <div class="col-3">
+                <h6>Текущая скорость:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="diff_speed" id="exampleRadios3" value="more">
+                    <label class="form-check-label" for="exampleRadios3">больше</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="diff_speed" id="exampleRadios4" value="less">
+                    <label class="form-check-label" for="exampleRadios4">меньше</label>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input class="form-control form-control-sm" type="text" name="speed_query" aria-describedby="floatHelp">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary">Отфильтровать</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-12">
+            </br>
+            </br>
+            {% if data %}
             <table class="table table-bordered">
              <thead>
                 <tr>
                   <th scope="col">Время замера</th>
                   <th scope="col">Координаты</th>
-                  <th scope="col">Высота над уровнем моря</th>
-                  <th scope="col">Текущая скорость</th>
+                  <th scope="col">Высота над уровнем моря (метров)</th>
+                  <th scope="col">Текущая скорость (узлов)</th>
                 </tr>
               </thead>
               <tbody>
               {% for item in data %}
                 <tr>
-                  <td>{{ item.GGA.timestamp }}</td>
-                  <td>{{ item.GGA.lat }}/td>
-                  <td>{{ item.GGA.altitude }}</td>
-                    <td>{{ item.RMC.spd_over_grnd }}</td>
+                  <td>{{ item.time }}</td>
+                  <td>{{ item.coordinates }}</td>
+                  <td>{{ item.altitude }}</td>
+                    <td>{{ item.speed }}</td>
                 </tr>
               {% endfor %}
               </tbody>
             </table>
+            {% else %}
+            <h6>Нет данных для отображения</h6>
+            {% endif %}
+            </br>
         </div>
     </div>
 

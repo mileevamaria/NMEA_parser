@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+             <thead>
+                <tr>
+                  <th scope="col">Время замера</th>
+                  <th scope="col">Координаты</th>
+                  <th scope="col">Высота над уровнем моря</th>
+                  <th scope="col">Текущая скорость</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for item in data %}
+                <tr>
+                  <td>{{ item.GGA.timestamp }}</td>
+                  <td>{{ item.GGA.lat }}/td>
+                  <td>{{ item.GGA.altitude }}</td>
+                    <td>{{ item.RMC.spd_over_grnd }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}

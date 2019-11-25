@@ -23,7 +23,6 @@ def file_content(request, filename):
     title = 'Посмотреть данные'
     filepath = os.path.join('media', filename)
     data = nmea_get(filepath)
-    print(data)
 
     if request.method == "GET":
         height = request.GET.get('height_query')

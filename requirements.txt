@@ -1,5 +1,5 @@
 chardet==3.0.4
-Django==2.2.7
+Django==2.2.8
 future==0.18.2
 iso8601==0.1.12
 pynmea2==1.15.0
